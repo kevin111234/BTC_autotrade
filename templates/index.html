@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비트코인 자동투자 현황</title>
+</head>
+<body>
+    <h1>비트코인 자동투자 현황</h1>
+
+    <h2>현재 수익률</h2>
+    <p>총 수익: {{ trade_data['total_profit'] }} 원</p>
+
+    <h2>최근 거래 가격</h2>
+    <p>최근 거래 가격: {{ trade_data['last_trade_price'] }} 원</p>
+
+    <h2>거래 내역</h2>
+    <ul>
+        {% for trade in trade_data['trades'] %}
+            <li>{{ trade['type'] }} - {{ trade['price'] }} 원</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
