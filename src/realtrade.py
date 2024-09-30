@@ -171,8 +171,9 @@ def execute_strategy():
         print(f"에러 발생: {e}")
         time.sleep(60)  # 오류 발생 시 1분 대기
 
-# 메인 루프 실행
-while True:
-    execute_strategy()
-    print("다음 실행까지 대기 중...")
-    time.sleep(300)  # 5분 대기
+# 메인 루프 실행 (직접실행시에만)
+if __name__ == '__main__':
+  while True:
+      execute_strategy()
+      print("다음 실행까지 대기 중...")
+      time.sleep(300)  # 5분 대기
